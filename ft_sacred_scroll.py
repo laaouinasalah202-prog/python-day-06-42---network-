@@ -3,6 +3,7 @@ import alchemy
 print("=== Sacred Scroll Mastery ===")
 print("\nTesting direct module access:")
 
+''' call the function from the file elements '''
 print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")
 print(f"alchemy.elements.create_water(): {alchemy.elements.create_water()}")
 print(f"alchemy.elements.create_earth(): {alchemy.elements.create_earth()}")
@@ -13,6 +14,7 @@ print(f"alchemy.create_fire(): {alchemy.create_fire()}")
 print(f"alchemy.create_water(): {alchemy.create_water()}")
 print("alchemy.create_earth(): ", end="")
 
+''' catch AttributError in case of incorrect import '''
 try:
     print(f"{alchemy.create_air()}")
 except AttributeError:
@@ -24,6 +26,7 @@ try:
 except AttributeError:
     print(" AttributeError - not exposed")
 
+''' print the package special variables '''
 print("\nPackage metadata:")
 print(f"Version: {alchemy.__version__}")
 print(f"Author: {alchemy.__author__}")
